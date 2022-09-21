@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Quạt máy</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script>
+		let timer;
+		let turn = 0;
+		function turnOn() {
+			timer = setInterval(turnFan, 10);// toc do thoi gian quay
+			let x = document.getElementById("on");
+			x.disabled = true;
+		}
+
+		function turnOff() {
+			clearInterval(timer);
+			let x = document.getElementById("on");
+			x.disabled = false;
+		}
+
+		function turnFan() {
+			let x = document.getElementById("myFan");
+			turn += 10;// goc quay 1 turn
+			x.style.transform = "rotate("+ (turn % 360) +"deg)"
+		}
+  </script>
+
+	</head>
+	<body>
+		<p><img src="maylanh.png" id="myFan"  width="350px" height="200px"></p>
+		<p class="container">
+		<button id="on" onclick="turnOn()" class="button_slide slide_down" type="button">Bật quạt</button>
+	
+		<button class="button_slide slide_down" id="off" onclick="turnOff()"> Tắt quạt </button>
+		</p>
+		<p class="inforWeb">Quạt máy online Design by LOC SHADOW</p>
+		
+
+
+		<a class="facebook" href="https://www.facebook.com/Levai1.tyt" target="_blank" >FaceBook DEV</a>
+		
+	</body>
+</html>
